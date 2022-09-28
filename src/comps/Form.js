@@ -8,14 +8,11 @@ class Form extends Component {
 
         this.state = {
 
-            name: "",
-            mail: "",
-            number: "",
+            name: "Sam",
+            mail: "bigdog@gmail.com",
+            number: "0542313112",
             schools: [],
             jobs: [],
-            nameFormRead: false,
-            schoolFormRead: false
-
         }
 
     }
@@ -35,9 +32,9 @@ class Form extends Component {
 
     }
 
-    handleClick = (e) => {
-        let toogle = !this.state.nameFormRead
-        this.setState({ nameFormRead: toogle });
+    handleSchoolclick = (e) => {
+        e.preventDefault()
+        this.setState({ schools: this.state.schools.concat({}) })
     }
 
 
@@ -59,14 +56,15 @@ class Form extends Component {
                             <input placeholder="mail" onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
                             <input placeholder="phone" onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
                         </div>
-
+                        <button onClick={this.handleSchoolclick}> + Work Experince</button>
+                        {schools.map(el => <SchoolForm key={1}> </SchoolForm>)}
                     </div>
 
                 </form >
 
 
-                <div >
-                    <p> {name}</p>
+                <div className="cv_preview" >
+                    <h2> {name}</h2>
                     <p> {mail}</p>
                     <p> {number}</p>
                 </div>
