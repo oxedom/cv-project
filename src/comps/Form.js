@@ -10,7 +10,9 @@ class Form extends Component {
             mail: "",
             number: "",
             schools: [],
-            jobs: []
+            jobs: [],
+            nameFormRead: false,
+            schoolFormRead: false
 
         }
 
@@ -31,6 +33,11 @@ class Form extends Component {
 
     }
 
+    handleClick = (e) => {
+        let toogle = !this.state.nameFormRead
+        this.setState({ nameFormRead: toogle });
+    }
+
 
 
     render() {
@@ -38,9 +45,33 @@ class Form extends Component {
         return (<div>
             <form onSubmit={this.handleSubmit}>
 
-                <input onChange={this.handleChange} name="name" value={name} type='text' maxLength={30} />
-                <input onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
-                <input onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
+
+
+                {!this.state.nameFormRead &&
+
+                    <div >
+                        <input onChange={this.handleChange} name="name" value={name} type='text' maxLength={30} />
+                        <input onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
+                        <input onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
+                    </div>
+                }
+                {this.state.nameFormRead &&
+
+                    <div >
+                        <p> {name}</p>
+                        <p> {mail}</p>
+                        <p> {number}</p>
+
+
+                    </div>
+                }
+
+
+
+
+
+
+                <button onClick={this.handleClick}>READ ME</button>
 
                 <SchoolForm schools={schools} updateState={this.updateState}> </SchoolForm>
 
