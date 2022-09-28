@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./header";
 import SchoolForm from './SchoolForm'
 import '../styles/styles.css'
 class Form extends Component {
@@ -43,35 +44,44 @@ class Form extends Component {
 
     render() {
         const { name, mail, number, schools } = this.state
-        return (<div className="dvider">
+        return (<div className="wrapper">
 
-            <form className="form-container" onSubmit={this.handleSubmit}>
+            <Header> </Header>
+            <div className="dvider">
 
-                <div className="form-box">
-                    <div className="form-inputs">
-                        <input onChange={this.handleChange} name="name" value={name} type='text' maxLength={30} />
-                        <input onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
-                        <input onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
+                <form>
+
+                    <div className="form-box">
+
+                        <div className="form-inputs">
+                            <h2> Personal Info</h2>
+                            <input placeholder="name" onChange={this.handleChange} name="name" value={name} type='text' maxLength={30} />
+                            <input placeholder="mail" onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
+                            <input placeholder="phone" onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
+                        </div>
+
                     </div>
 
-                </div>
+                </form >
 
 
-                <button onClick={this.handleClick}>Toogle</button>
-
-                {/* <SchoolForm schools={schools} updateState={this.updateState}> </SchoolForm> */}
-
-            </form >
-
-
-            <div>
                 <div >
                     <p> {name}</p>
                     <p> {mail}</p>
                     <p> {number}</p>
                 </div>
+
+
+
+
+
+
+
+
+
             </div>
 
+            <footer className="footer"> </footer>
         </div>)
     }
 }
