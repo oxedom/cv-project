@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./header";
 import SchoolForm from './SchoolForm'
+import uniqid from "uniqid";
 import '../styles/styles.css'
 class Form extends Component {
     constructor() {
@@ -11,8 +12,16 @@ class Form extends Component {
             name: "Sam",
             mail: "bigdog@gmail.com",
             number: "0542313112",
-            schools: [],
-            jobs: [],
+            schools: [
+                {
+                    school: "Croford",
+                    school_title: 'Software Engginer',
+                    school_date: "2014-2016"
+                }
+            ],
+            jobs: [
+                {}
+            ],
         }
 
     }
@@ -34,7 +43,8 @@ class Form extends Component {
 
     handleSchoolclick = (e) => {
         e.preventDefault()
-        this.setState({ schools: this.state.schools.concat({}) })
+        this.setState({ schools: this.state.schools.concat({ id: uniqid() }) })
+
     }
 
 
@@ -56,29 +66,24 @@ class Form extends Component {
                             <input placeholder="mail" onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
                             <input placeholder="phone" onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
                         </div>
-                        <button onClick={this.handleSchoolclick}> + Work Experince</button>
-                        {schools.map(el => <SchoolForm key={1}> </SchoolForm>)}
+
+                        {schools.map(el => <SchoolForm a-key={el.id} key={el.id}> </SchoolForm>)}
+                        <button onClick={this.handleSchoolclick}> + Education </button>
                     </div>
 
                 </form >
-
 
                 <div className="cv_preview" >
                     <h2> {name}</h2>
                     <p> {mail}</p>
                     <p> {number}</p>
+
+                    {/* need to make this dyanmic for many schools */}
+                    <h2> {schools[0].school}</h2>
+                    <p> {mail}</p>
+                    <p> {number}</p>
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
-
             <footer className="footer"> </footer>
         </div>)
     }

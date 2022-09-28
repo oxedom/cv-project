@@ -34,15 +34,13 @@ class SchoolForm extends Component {
 
     render() {
         const { school, school_title, school_date } = this.state
-        return (<div>
-            <input onChange={this.handleChange} name="school" type='text' maxLength={30} />
-            <input onChange={this.handleChange} name="school_title" type='text' maxLength={30} />
-            <input onChange={this.handleChange} name="school_date" type='text' maxLength={30} />
-
-            <h1> Hello form School Form </h1>
-
-
-
+        return (<div className="form-box">
+            <div className="form-inputs">
+                <h2> School Info </h2>
+                <input onChange={this.handleChange} name="school" type='text' maxLength={30} />
+                <input onChange={this.handleChange} name="school_title" type='text' maxLength={30} />
+                <input onChange={this.handleChange} name="school_date" type='text' maxLength={30} />
+            </div>
         </div>)
     }
 }
