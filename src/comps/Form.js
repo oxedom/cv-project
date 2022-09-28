@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SchoolForm from './SchoolForm'
+import '../styles/styles.css'
 class Form extends Component {
     constructor() {
         super()
@@ -42,41 +43,35 @@ class Form extends Component {
 
     render() {
         const { name, mail, number, schools } = this.state
-        return (<div>
-            <form onSubmit={this.handleSubmit}>
+        return (<div className="dvider">
 
+            <form className="form-container" onSubmit={this.handleSubmit}>
 
-
-                {!this.state.nameFormRead &&
-
-                    <div >
+                <div className="form-box">
+                    <div className="form-inputs">
                         <input onChange={this.handleChange} name="name" value={name} type='text' maxLength={30} />
                         <input onChange={this.handleChange} name="mail" value={mail} type='text' maxLength={30} />
                         <input onChange={this.handleChange} name="number" value={number} type='text' maxLength={12} />
                     </div>
-                }
-                {this.state.nameFormRead &&
 
-                    <div >
-                        <p> {name}</p>
-                        <p> {mail}</p>
-                        <p> {number}</p>
+                </div>
 
 
-                    </div>
-                }
+                <button onClick={this.handleClick}>Toogle</button>
 
+                {/* <SchoolForm schools={schools} updateState={this.updateState}> </SchoolForm> */}
 
-
-
-
-
-                <button onClick={this.handleClick}>READ ME</button>
-
-                <SchoolForm schools={schools} updateState={this.updateState}> </SchoolForm>
-
-                <button type="submit" > Submit  </button>
             </form >
+
+
+            <div>
+                <div >
+                    <p> {name}</p>
+                    <p> {mail}</p>
+                    <p> {number}</p>
+                </div>
+            </div>
+
         </div>)
     }
 }

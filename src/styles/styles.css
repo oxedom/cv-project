@@ -1,0 +1,32 @@
+body { 
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.form-container {
+    
+    background-color: brown;
+}
+
+
+.form-box {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    margin: 20px;
+    flex-direction: column;
+    background-color: green;
+}
+
+.fromInputs {
+    display: flex;
+}
+
+
+
+.dvider {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}

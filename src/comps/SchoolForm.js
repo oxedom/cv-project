@@ -17,7 +17,7 @@ class SchoolForm extends Component {
         // let field = e.target.getAttribute('name')
         // let text = e.target.value
         // this.setState({ [field]: text })
-        updateState({ schools: this.schools.contact({ name: 'amit' }) })
+        this.updateState({ schools: this.schools.contact({ name: 'amit' }) })
         console.log(this.schools);
         let text = e.target.value
     }
@@ -34,7 +34,7 @@ class SchoolForm extends Component {
 
     render() {
         const { school, school_title, school_date } = this.state
-        return (<div className="form-box">
+        return (<div>
             <input onChange={this.handleChange} name="school" type='text' maxLength={30} />
             <input onChange={this.handleChange} name="school_title" type='text' maxLength={30} />
             <input onChange={this.handleChange} name="school_date" type='text' maxLength={30} />
