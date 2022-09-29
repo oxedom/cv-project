@@ -1,7 +1,7 @@
 
 
 import React, { Component } from "react";
-import Input from "./Input";
+
 import uniqid from "uniqid";
 class SchoolForm extends Component {
     constructor(props) {
@@ -29,7 +29,11 @@ class SchoolForm extends Component {
 
         return (<div className="form-box" a-id={uniqid()}>
             <p className="title"> Education</p>
-            <Input fields={schoolData.fields} handleChange={this.props.handleChange} />
+            <div className="form-inputs">
+                <input></input>
+                <input></input>
+                <input></input>
+            </div>
 
             <button onClick={this.handleClick} className="btn"> Delete </button>
 

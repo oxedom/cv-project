@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 import Header from "./header";
 import Form from "./Form";
 import SchoolForm from './SchoolForm'
+import CompanyForm from "./CompanyForm";
 class Cv extends Component {
     constructor() {
         super()
@@ -12,16 +13,18 @@ class Cv extends Component {
             number: "0542313112",
             schools: [
                 {
-                    fields: {
-                        school: "Croford",
-                        school_title: 'Software Engginer',
-                        school_date: "2014-2016",
-                    },
-                    id: uniqid()
-                }
-            ],
+                    id: uniqid(),
+                    school: "Croford",
+                    school_title: 'Software Engginer',
+                    school_date: "2014-2016",
+                }],
             jobs: [
-                {}
+                {
+                    id: uniqid(),
+                    job: "Intel",
+                    job_title: "Software Dev",
+                    job_date: "2012-2016"
+                }
             ],
 
         }
@@ -50,6 +53,7 @@ class Cv extends Component {
                         <Form handleChange={this.handleChange}></Form>
                         {/* <button className="btn"> </button> */}
                         {this.state.schools.map(s => <SchoolForm handleChange={this.handleChange} schoolData={s} > </SchoolForm>)}
+                        {this.state.jobs.map(s => <CompanyForm handleChange={this.handleChange} schoolData={s} > </CompanyForm>)}
                     </form>
 
                 </div >

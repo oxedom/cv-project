@@ -16,10 +16,13 @@ class CompanyForm extends Component {
     render() {
 
         return (<div className="form-box">
-            <p className="title"> Personal Info</p>
+            <p className="title"> Work Experince </p>
             <div className="form-inputs">
-
-                <Input></Input>
+                <div className="form-inputs">
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                </div>
             </div>
             <button className="btn"> Delete </button>
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Input from "./Input";
+
 import '../styles/styles.css'
 class Form extends Component {
     constructor() {
@@ -17,8 +17,11 @@ class Form extends Component {
 
         return (<div className="form-box">
             <p className="title"> Personal Info</p>
-            <Input></Input>
-
+            <div className="form-inputs">
+                <input></input>
+                <input></input>
+                <input></input>
+            </div>
         </div>)
     }
 }
