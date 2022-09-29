@@ -31,6 +31,11 @@ class Cv extends Component {
 
     }
 
+    removeEntry = (id, arr) => {
+        let filtered = this.state[arr].filter(e => { return e.id !== id })
+        this.setState({ [arr]: filtered })
+    }
+
 
     handleChange = (e) => {
 
@@ -52,8 +57,8 @@ class Cv extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <Form handleChange={this.handleChange}></Form>
                         {/* <button className="btn"> </button> */}
-                        {this.state.schools.map(s => <SchoolForm handleChange={this.handleChange} schoolData={s} > </SchoolForm>)}
-                        {this.state.jobs.map(s => <CompanyForm handleChange={this.handleChange} schoolData={s} > </CompanyForm>)}
+                        {this.state.schools.map(s => <SchoolForm key={s.id} removeEntry={this.removeEntry} handleChange={this.handleChange} schoolData={s} > </SchoolForm>)}
+                        {this.state.jobs.map(j => <CompanyForm key={j.id} handleChange={this.handleChange} schoolData={j} > </CompanyForm>)}
                     </form>
 
                 </div >

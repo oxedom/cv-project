@@ -18,7 +18,7 @@ class SchoolForm extends Component {
 
     handleClick = (e) => {
         let id = e.target.parentNode.getAttribute('a-id')
-        this.props.removeForm(id)
+        this.props.removeEntry(id, 'schools')
     }
 
 
@@ -27,15 +27,15 @@ class SchoolForm extends Component {
     render() {
         const { schoolData } = this.props
 
-        return (<div className="form-box" a-id={uniqid()}>
+        return (<div className="form-box" a-id={schoolData.id}>
             <p className="title"> Education</p>
             <div className="form-inputs">
-                <input></input>
-                <input></input>
-                <input></input>
+                <input name="school" ></input>
+                <input name="school_title"></input>
+                <input name="school_date"></input>
             </div>
 
-            <button onClick={this.handleClick} className="btn"> Delete </button>
+            <button onClick={this.handleClick} a-id={schoolData.id} className="btn"> Delete </button>
 
 
         </div>)
