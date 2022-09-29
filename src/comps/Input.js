@@ -14,18 +14,10 @@ class Input extends Component {
 
 
     render() {
-        const { f1, f2, f3 } = this.props
-        console.log(this.props);
+        const { fields } = this.props
+
         return (<div className="form-inputs">
-
-
-            <input name={f1} type='text' />
-            <input name={f2} type='text' />
-            <input name={f3} type='text' />
-
-
-
-
+            {Object.keys({ ...fields }).map(f => <input onChange={this.props.handleChange} type='text' name={f} value={fields[f]} />)}
         </div>)
     }
 }

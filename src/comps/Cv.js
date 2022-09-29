@@ -12,9 +12,11 @@ class Cv extends Component {
             number: "0542313112",
             schools: [
                 {
-                    school: "Croford",
-                    school_title: 'Software Engginer',
-                    school_date: "2014-2016",
+                    fields: {
+                        school: "Croford",
+                        school_title: 'Software Engginer',
+                        school_date: "2014-2016",
+                    },
                     id: uniqid()
                 }
             ],
@@ -31,7 +33,8 @@ class Cv extends Component {
 
         let text = e.target.value
         let field = e.target.getAttribute('name')
-        let element_id = e.target.getAttribute('id')
+        let element_id = e.target.parentNode.parentNode.getAttribute('a-id')
+        console.log(text, field, element_id);
     }
 
     handleSubmit = (e) => {
@@ -43,10 +46,10 @@ class Cv extends Component {
             <Header></Header>
             <main className="dvider">
                 <div className="cv_creator">
-                    <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-                        <Form></Form>
-                        <button className="btn"> </button>
-                        {this.state.schools.map(s => <SchoolForm schoolData={s} > </SchoolForm>)}
+                    <form onSubmit={this.handleSubmit}>
+                        <Form handleChange={this.handleChange}></Form>
+                        {/* <button className="btn"> </button> */}
+                        {this.state.schools.map(s => <SchoolForm handleChange={this.handleChange} schoolData={s} > </SchoolForm>)}
                     </form>
 
                 </div >
