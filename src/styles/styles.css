@@ -41,20 +41,21 @@ body {
     padding: 10px;
 }
 
+.title {
+    justify-self: flex-start;
+    align-self: flex-start;
+}
 
 
 .dvider {
     
     display: grid;
-    grid-template-rows: repeat(3,1fr);
+    flex-grow: 1;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 30px;
 }
 
-.dvider > * {
-margin: 10px;
-border: solid 5px black;
-}
+
 
 .footer {
     padding: 30px;
