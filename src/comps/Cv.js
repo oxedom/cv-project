@@ -52,7 +52,7 @@ class Cv extends Component {
 
     render() {
         return (<div className="wrapper">
-            <Header></Header>
+
             <main className="dvider">
                 <div className="cv_creator">
                     <form onSubmit={this.handleSubmit}>

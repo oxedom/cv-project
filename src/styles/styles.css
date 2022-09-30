@@ -24,14 +24,6 @@ body {
     justify-content: space-between;
 }
 
-.header {
-    display: flex;
-    color:  var(--c1);
-    justify-content: center;
-    background-color: var(--c5);
-
-}
-
 .form-container {
     flex-grow: 1;
     background-color: var(--c5)
@@ -73,9 +65,10 @@ body {
     padding: 1%;
     box-shadow: -2px 2px var(--c5);
     background-color: var(--c4);
-    justify-self: center;
     margin: 5px;
-    align-self: center;
+    margin-left: 15px;
+
+    align-self: flex-start;
 }
 
 .btn:hover {
