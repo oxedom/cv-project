@@ -11,10 +11,15 @@ class CompanyForm extends Component {
         }
 
     }
-
+    handleClick = (e) => {
+        let id = e.target.getAttribute('a-id')
+        this.props.removeEntry(id, 'jobs')
+    }
 
     render() {
+        const { jobsData } = this.props
 
+        console.log(jobsData);
         return (<div className="form-box">
             <p className="title"> Work Experince </p>
             <div className="form-inputs">
@@ -24,7 +29,7 @@ class CompanyForm extends Component {
                     <input></input>
                 </div>
             </div>
-            <button className="btn"> Delete </button>
+            <button onClick={this.handleClick} a-id={jobsData.id} className="btn"> Delete </button>
 
 
         </div>)

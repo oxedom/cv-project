@@ -47,6 +47,7 @@ class Cv extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        alert(e.target.value[0])
     }
 
     render() {
@@ -56,9 +57,9 @@ class Cv extends Component {
                 <div className="cv_creator">
                     <form onSubmit={this.handleSubmit}>
                         <Form handleChange={this.handleChange}></Form>
-                        {/* <button className="btn"> </button> */}
+
                         {this.state.schools.map(s => <SchoolForm key={s.id} removeEntry={this.removeEntry} handleChange={this.handleChange} schoolData={s} > </SchoolForm>)}
-                        {this.state.jobs.map(j => <CompanyForm key={j.id} handleChange={this.handleChange} schoolData={j} > </CompanyForm>)}
+                        {this.state.jobs.map(j => <CompanyForm key={j.id} removeEntry={this.removeEntry} handleChange={this.handleChange} jobsData={j} > </CompanyForm>)}
                     </form>
 
                 </div >

@@ -2,7 +2,6 @@
 
 import React, { Component } from "react";
 
-import uniqid from "uniqid";
 class SchoolForm extends Component {
     constructor(props) {
         super()
