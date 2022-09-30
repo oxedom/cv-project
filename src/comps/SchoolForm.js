@@ -34,7 +34,7 @@ class SchoolForm extends Component {
                 <input name="school_date"></input>
             </div>
 
-            <button onClick={this.handleClick} a-id={schoolData.id} className="btn"> Delete </button>
+            <div onClick={this.handleClick} a-id={schoolData.id} className="btn"> Delete </div>
 
 
         </div>)

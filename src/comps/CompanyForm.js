@@ -29,7 +29,7 @@ class CompanyForm extends Component {
                     <input></input>
                 </div>
             </div>
-            <button onClick={this.handleClick} a-id={jobsData.id} className="btn"> Delete </button>
+            <div onClick={this.handleClick} a-id={jobsData.id} className="btn"> Delete </div>
 
 
         </div>)

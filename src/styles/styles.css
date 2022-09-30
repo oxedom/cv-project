@@ -68,13 +68,23 @@ body {
 }
 
 .btn {
+    border: var(--c5) 2px solid;
+    border-radius: 75px;
+    padding: 1%;
+    box-shadow: -2px 2px var(--c5);
+    background-color: var(--c4);
     justify-self: center;
     margin: 5px;
     align-self: center;
 }
 
+.btn:hover {
+    transform: scale(1.02);
+    background-color: var(--c2);
+}
+
 .dvider {
-    
+    margin: 10px;;
     display: grid;
     flex-grow: 1;
     grid-template-columns: repeat(2,1fr);
@@ -84,6 +94,20 @@ body {
 
 
 .footer {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
     padding: 30px;
     background-color: var(--c5);
+}
+
+.footer a {
+    color:var(--c1);
+    text-decoration: dashed;
+ 
+}
+
+.footer svg {
+    color: var(--c1);
+
 }
