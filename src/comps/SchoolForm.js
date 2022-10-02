@@ -26,7 +26,7 @@ class SchoolForm extends Component {
     render() {
         const { schoolData } = this.props
 
-        return (<div className="form-box" a-id={schoolData.id}>
+        return (<section className="form-box" a-id={schoolData.id}>
             <p className="title"> Education</p>
             <div className="form-inputs">
                 <input name="school" ></input>
@@ -37,7 +37,7 @@ class SchoolForm extends Component {
             <div onClick={this.handleClick} a-id={schoolData.id} className="btn"> Delete </div>
 
 
-        </div>)
+        </section>)
     }
 }
 

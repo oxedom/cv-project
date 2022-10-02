@@ -15,14 +15,14 @@ class Form extends Component {
 
     render() {
 
-        return (<div className="form-box">
+        return (<section className="form-box">
             <p className="title"> Personal Info</p>
             <div className="form-inputs">
                 <input></input>
                 <input></input>
                 <input></input>
             </div>
-        </div>)
+        </section>)
     }
 }
 

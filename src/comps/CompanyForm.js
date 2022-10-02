@@ -16,23 +16,27 @@ class CompanyForm extends Component {
         this.props.removeEntry(id, 'jobs')
     }
 
+    handleChange = (e) => { this.props.handleChange(e) }
+
     render() {
         const { jobsData } = this.props
 
         console.log(jobsData);
-        return (<div className="form-box">
+        return (<section className="form-box">
             <p className="title"> Work Experince </p>
             <div className="form-inputs">
                 <div className="form-inputs">
-                    <input></input>
-                    <input></input>
-                    <input></input>
+                    <input name="job" defaultValue={`${jobsData.job}`} onChange={this.handleChange} />
+                    <input name="job_title" defaultValue={jobsData.job_title} onChange={this.handleChange} />
+                    <input name="job_start" defaultValue={jobsData.job_start} onChange={this.handleChange} />
+                    <input name="job_end" defaultValue={jobsData.job_end} onChange={this.handleChange} />
+
                 </div>
             </div>
             <div onClick={this.handleClick} a-id={jobsData.id} className="btn"> Delete </div>
 
 
-        </div>)
+        </section>)
     }
 }
 
