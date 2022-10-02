@@ -18,6 +18,7 @@ body {
 }
 
 .page {
+
     border: solid black 1px;
     border-radius: 10px;;
 }
@@ -65,7 +66,7 @@ body {
     /* border: var(--c4) solid 2px; */
 }
 .cv_creator {
-    background-color: var(--c4)
+    background-color: var(--c2);
 }
 .title {
     margin-left: 10px;
