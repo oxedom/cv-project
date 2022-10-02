@@ -2,24 +2,28 @@ import React, { Component } from "react";
 
 import "../styles/styles.css";
 class Form extends Component {
-  constructor() {
-    super();
+    constructor(props) {
+        super();
 
-    this.state = {};
-  }
+        this.state = {};
+    }
 
-  render() {
-    return (
-      <section className="form-box">
-        <p className="title"> Personal Info</p>
-        <div className="form-inputs">
-          <input name="name"></input>
-          <input name="email"></input>
-          <input name="phone"></input>
-        </div>
-      </section>
-    );
-  }
+    render() {
+
+        const { name, email, phone, id } = this.props.personalData
+
+
+        return (
+            <section className="form-box">
+                <p className="title"> Personal Info</p>
+                <div className="form-inputs">
+                    <input name="name" value={name}></input>
+                    <input name="email" value={email}></input>
+                    <input name="phone" value={phone}></input>
+                </div>
+            </section>
+        );
+    }
 }
 
 export default Form;
