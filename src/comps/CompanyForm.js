@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Buttons from "./buttons";
 
 import "../styles/styles.css";
 class CompanyForm extends Component {
@@ -7,15 +8,14 @@ class CompanyForm extends Component {
 
         this.state = {};
     }
-    handleClick = (e) => {
-        let id = e.target.getAttribute("a-id");
-        this.props.removeEntry(id, "jobs");
-    };
+
+
+
 
     render() {
-        const { jobsData } = this.props;
+        const { jobsData, removeEntry } = this.props;
         const { job, job_title, job_start, job_end, id } = jobsData;
-
+        const buttonData = { id: id, removeEntry }
         return (
             <section className="form-box" a-id={id} name="jobs">
                 <p className="title"> Work Experince </p>
@@ -27,10 +27,7 @@ class CompanyForm extends Component {
                     <input name="job_end" value={job_end} />
                 </div>
 
-                <div onClick={this.handleClick} a-id={jobsData.id} className="btn">
-                    {" "}
-                    Delete{" "}
-                </div>
+                <Buttons data={buttonData}></Buttons>
             </section>
         );
     }

@@ -37,6 +37,10 @@ class Cv extends Component {
         this.setState({ [arr]: filtered })
     }
 
+    addEntry = (subject) => {
+
+    }
+
 
     handleChange = (e) => {
 
@@ -52,7 +56,6 @@ class Cv extends Component {
             this.setState({ [arrayName]: [targetArray] })
         }
         else { this.setState({ [field]: text }) }
-
     }
 
 
