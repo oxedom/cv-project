@@ -13,9 +13,9 @@ class CompanyForm extends Component {
 
 
     render() {
-        const { jobsData, removeEntry } = this.props;
+        const { jobsData, removeEntry, addEntry } = this.props;
         const { job, job_title, job_start, job_end, id } = jobsData;
-        const buttonData = { id: id, removeEntry }
+        const buttonData = { id: id, removeEntry, addEntry }
         return (
             <section className="form-box" a-id={id} name="jobs">
                 <p className="title"> Work Experince </p>

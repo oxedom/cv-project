@@ -25,7 +25,7 @@ class Buttons extends Component {
                     Delete{" "}
                 </div>
 
-                <div className="btn" onClick={this.handleAddClick}> Add  </div>
+
 
             </div>
         );
