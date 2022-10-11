@@ -16,7 +16,7 @@ class Form extends Component {
 
         return (
             <section className="form-box" onChange={this.props.handler} >
-                <p className="title"> Personal Info</p>
+                <p className="title"> Personal Details</p>
                 <div className="form-inputs">
                     <input name="name" value={name}></input>
                     <input name="title" value={title}></input>

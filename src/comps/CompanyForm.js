@@ -16,15 +16,17 @@ class CompanyForm extends Component {
         const { jobsData, removeEntry, addEntry } = this.props;
         const { job, job_title, job_start, job_end, id } = jobsData;
         const buttonData = { id: id, removeEntry, addEntry }
+        let today = new Date()
         return (
             <section className="form-box" a-id={id} name="jobs">
-                <p className="title"> Work Experince </p>
+                <p className="title"> Work Experience </p>
 
                 <div className="form-inputs">
-                    <input name="job" value={job} />
-                    <input name="job_title" value={job_title} />
-                    <input name="job_start" value={job_start} />
-                    <input name="job_end" value={job_end} />
+                    <input placeholder="Job Company" name="job" value={job} />
+                    <input placeholder="Job title" name="job_title" value={job_title} />
+                    <input placeholder="Job start" min="1950" name="job_start" value={job_start} />
+                    <input placeholder="Job end" type="number" min="1950" max={today.getFullYear()} name="job_end" value={job_end} />
+
                 </div>
 
                 <Buttons data={buttonData}></Buttons>

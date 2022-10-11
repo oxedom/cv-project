@@ -105,7 +105,6 @@ class Cv extends Component {
     render() {
         return (<div className="wrapper">
 
-
             <main className="dvider">
                 <div className="cv_creator">
                     <form className="page">

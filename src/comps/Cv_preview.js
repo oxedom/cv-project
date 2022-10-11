@@ -51,7 +51,6 @@ class Cv_Preview extends Component {
                                 <p> {j.job}</p>
                                 <p> {j.job_title}</p>
                                 <p> {j.job_start} - {j.job_end}</p>
-
                             </div>)}
 
                     </section>}

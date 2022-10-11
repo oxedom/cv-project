@@ -4,6 +4,7 @@
   --c3: #90b494;
   --c2: #bfc8ad;
   --c1: #dbcfb0;
+  --marginlr: 15px;
 }
 
 body {
@@ -49,15 +50,26 @@ body {
   padding: 10px;
 }
 
-.form-inputs > input {
+.form-inputs > input{ 
+
   padding: 2px;
+  margin-left: var(--marginlr);
+  margin-right: var(--marginlr);
   border-radius: 5px;
   border: 1px solid black;
   /* border: var(--c4) solid 2px; */
 }
+
+.form-inputs > textarea {
+  margin-left: var(--marginlr);
+  margin-right: var(--marginlr);
+}
+
 .cv_creator {
   background-color: var(--c2);
 }
+
+
 .title {
   margin-left: 10px;
   font-size: 24px;
@@ -74,7 +86,7 @@ body {
   margin-left: 30px;
   margin: 15px;
 
-  /* align-self: flex-start; */
+  align-self: flex-start;
 }
 
 .btn:hover {
@@ -152,3 +164,4 @@ font-size: larger;
   width: 15px;
   margin-right: 5px;
 }
+
