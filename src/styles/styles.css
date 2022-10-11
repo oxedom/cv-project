@@ -71,10 +71,10 @@ body {
   padding: 1%;
   box-shadow: -2px 2px var(--c5);
   background-color: var(--c4);
-  margin: 5px;
-  margin-left: 15px;
+  margin-left: 30px;
+  margin: 15px;
 
-  align-self: flex-start;
+  /* align-self: flex-start; */
 }
 
 .btn:hover {
@@ -146,4 +146,9 @@ font-size: larger;
 
 .danger:hover {
   background-color: rgb(185, 21, 21);
+}
+
+.icon {
+  width: 15px;
+  margin-right: 5px;
 }
