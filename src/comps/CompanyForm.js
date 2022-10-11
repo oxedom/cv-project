@@ -14,7 +14,7 @@ class CompanyForm extends Component {
 
     render() {
         const { jobsData, removeEntry, addEntry } = this.props;
-        const { job, job_title, job_start, job_end, id } = jobsData;
+        const { job, job_title, job_start, job_end, id, job_bio } = jobsData;
         const buttonData = { id: id, removeEntry, addEntry }
         let today = new Date()
         return (
@@ -26,7 +26,7 @@ class CompanyForm extends Component {
                     <input placeholder="Job title" name="job_title" value={job_title} />
                     <input placeholder="Job start" min="1950" name="job_start" value={job_start} />
                     <input placeholder="Job end" type="number" min="1950" max={today.getFullYear()} name="job_end" value={job_end} />
-
+                    <textarea name='job_bio' value={job_bio} placeholder={`Tell us about your experince at ${job}`}> </textarea>
                 </div>
 
                 <Buttons data={buttonData}></Buttons>

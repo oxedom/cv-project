@@ -45,21 +45,22 @@ class Cv_Preview extends Component {
             <main className="experience">
                 {data.jobs.length > 0 &&
                     <section>
-                        <h4> Work </h4>
+                        <h2> Work </h2>
                         {data.jobs.map(j =>
-                            <div>
-                                <p> {j.job}</p>
+                            <div className="box">
+                                <h3> {j.job}</h3>
                                 <p> {j.job_title}</p>
                                 <p> {j.job_start} - {j.job_end}</p>
+                                <p> {j.job_bio} </p>
                             </div>)}
 
                     </section>}
                 {data.schools.length > 0 &&
                     < section >
-                        <h4> Education </h4>
+                        <h2> Education </h2>
                         {data.schools.map(s =>
-                            <div>
-                                <p> {s.school}</p>
+                            <div className="box">
+                                <h3> {s.school}</h3>
                                 <p> {s.school_title}</p>
                                 <p> {s.school_start} - {s.school_end} </p>
 

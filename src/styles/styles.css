@@ -67,6 +67,7 @@ body {
 
 .cv_creator {
   background-color: var(--c2);
+  border-radius: 10px;
 }
 
 
@@ -95,11 +96,18 @@ body {
 }
 
 .dvider {
-  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
   display: grid;
   flex-grow: 1;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
+}
+
+.box {
+  border-bottom: var(--c5) solid 1px;
 }
 
 .footer {
@@ -121,7 +129,10 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-around;
+  color: rgb(9, 14, 16);
+  margin-left: var(--marginlr);
+  margin-right: var(--marginlr);
+  justify-content: space-between;
   border-bottom: 10px var(--c3) solid;
 }
 .paragraph {
@@ -141,6 +152,7 @@ body {
   background-color: var(--c2);
   border: black 1px solid;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .experience {

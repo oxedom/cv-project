@@ -11,7 +11,7 @@ class Cv extends Component {
         this.state = {
             id: uniqid(),
             name: "Avi Cohen",
-            title: "Software Enginer",
+            title: "Software engineer",
             email: "bigdog@gmail.com",
             phone: "0542313112",
             city: "London, UK",
@@ -20,17 +20,18 @@ class Cv extends Component {
                 {
                     id: uniqid(),
                     school: "Croford",
-                    school_title: 'Software Engginer',
+                    school_title: 'B.SC in Computer Science',
                     school_start: "2016",
                     school_end: "2018"
                 }],
             jobs: [
                 {
                     id: uniqid(),
-                    job: "Intel",
-                    job_title: "Software Dev",
+                    job: "Intel (London) ",
+                    job_title: "Software engineer",
                     job_start: "2012",
-                    job_end: "2019"
+                    job_end: "2019",
+                    job_bio: "I maintained the ICP EU unit and was a a lead Dev ensuring that the team will hit marks by deadlines"
                 }
             ],
 
