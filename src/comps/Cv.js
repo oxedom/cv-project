@@ -48,28 +48,11 @@ class Cv extends Component {
 
     addEntry = (subject) => {
 
-        let copy = {}
-        if (subject === 'schools') {
-            copy = {
-                id: uniqid(),
-                school: "",
-                school_title: "",
-                school_date: "",
-            }
-        }
-        else if (subject === 'jobs') {
-            copy = {
-                id: uniqid(),
-                job: "",
-                job_title: "",
-                job_start: "",
-                job_end: ""
-
-            }
-        }
+        let entry = { id: uniqid() }
 
 
-        this.setState({ [subject]: [...this.state[subject], copy] })
+
+        this.setState({ [subject]: [...this.state[subject], entry] })
 
     }
     handleAddClick = (e) => {
