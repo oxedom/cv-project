@@ -42,6 +42,7 @@ class Cv extends Component {
     }
 
     addEntry = (subject) => {
+
         let copy = {}
         if (subject === 'schools') {
             copy = {
@@ -75,18 +76,24 @@ class Cv extends Component {
 
         let text = e.target.value
         let field = e.target.getAttribute('name')
-        let arrayID = e.target.parentNode.getAttribute('a-id')
-        alert(field, arrayID)
+        let arrayID = e.target.parentNode.parentNode.getAttribute('a-id')
 
-        if (arrayID) {
-            let arrayName = e.target.parentNode.parentNode.getAttribute('name')
-            let targetArray = this.state[arrayName].filter(e => { return e.id === arrayID })
-            targetArray = targetArray[0]
-            targetArray[field] = text
 
-            this.setState({ [arrayName]: [targetArray] })
-        }
-        else { this.setState({ [field]: text }) }
+        let arrayName = e.target.parentNode.parentNode.getAttribute('name')
+        let targetArray = this.state[arrayName].filter(e => { return e.id === arrayID })
+        let OtherArrays = this.state[arrayName].filter(e => { return e.id !== arrayID })
+        targetArray = targetArray[0]
+        targetArray[field] = text
+
+
+        this.setState({ [arrayName]: [...OtherArrays, targetArray] })
+
+    }
+
+    handlePersonal = (e) => {
+        let text = e.target.value
+        let field = e.target.getAttribute('name')
+        this.setState({ [field]: text })
     }
 
 
@@ -94,14 +101,21 @@ class Cv extends Component {
     render() {
         return (<div className="wrapper">
 
+
             <main className="dvider">
                 <div className="cv_creator">
-                    <form onChange={this.handleChange} className="page">
-                        <Form key={this.state.id} personalData={this.state} />
-                        {this.state.schools.map(s => <SchoolForm key={s.id} removeEntry={this.removeEntry} schoolData={s} > </SchoolForm>)}
-                        <div className="btn" onClick={this.handleAddClick} name="schools" > add </div>
-                        {this.state.jobs.map(j => <CompanyForm key={j.id} removeEntry={this.removeEntry} jobsData={j} > </CompanyForm>)}
-                        <div className="btn" onClick={this.handleAddClick} name="jobs" > Add job </div>
+                    <form className="page">
+
+                        <Form key={this.state.id} handler={this.handlePersonal} personalData={this.state} />
+
+                        <div onChange={this.handleChange}>
+                            {this.state.schools.map(s => <SchoolForm key={s.id} removeEntry={this.removeEntry} schoolData={s} > </SchoolForm>)}
+
+                            <div className="btn " onClick={this.handleAddClick} name="schools" > Add Education  </div>
+                            {this.state.jobs.map(j => <CompanyForm key={j.id} removeEntry={this.removeEntry} jobsData={j} > </CompanyForm>)}
+                            <div className="btn" onClick={this.handleAddClick} name="jobs" > Add Work Experince  </div>
+                        </div>
+
                     </form>
 
                 </div >

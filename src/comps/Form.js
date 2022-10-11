@@ -9,12 +9,13 @@ class Form extends Component {
     }
 
     render() {
+        const { handler } = this.props
 
         const { name, email, phone, id } = this.props.personalData
 
 
         return (
-            <section className="form-box">
+            <section className="form-box" onChange={this.props.handler} >
                 <p className="title"> Personal Info</p>
                 <div className="form-inputs">
                     <input name="name" value={name}></input>

@@ -10,10 +10,12 @@ class SchoolForm extends Component {
 
 
     render() {
-        console.log(this.props);
         const { schoolData, removeEntry, addEntry } = this.props;
+
         const { school, school_title, school_date, id } = schoolData
+
         const buttonData = { id: id, removeEntry, addEntry }
+
         return (
             <section className="form-box" a-id={id} name='schools'>
                 <p className="title"> Education</p>
