@@ -19,15 +19,15 @@ class Cv extends Component {
             schools: [
                 {
                     id: uniqid(),
-                    school: "Croford",
+                    school: "Oxford Universty",
                     school_title: 'B.SC in Computer Science',
                     school_start: "2016",
-                    school_end: "2018"
+                    school_end: "2019"
                 }],
             jobs: [
                 {
                     id: uniqid(),
-                    job: "Intel (London) ",
+                    job: "Intel Corporation",
                     job_title: "Software engineer",
                     job_start: "2012",
                     job_end: "2019",
