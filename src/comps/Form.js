@@ -11,7 +11,7 @@ class Form extends Component {
     render() {
         const { handler } = this.props
 
-        const { name, email, phone, id } = this.props.personalData
+        const { name, email, phone, id, city, bio, title } = this.props.personalData
 
 
         return (
@@ -19,8 +19,11 @@ class Form extends Component {
                 <p className="title"> Personal Info</p>
                 <div className="form-inputs">
                     <input name="name" value={name}></input>
+                    <input name="title" value={title}></input>
                     <input name="email" value={email}></input>
                     <input name="phone" value={phone}></input>
+                    <input name="city" value={city}></input>
+                    <textarea name="bio" value={bio}> </textarea>
                 </div>
             </section>
         );

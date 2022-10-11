@@ -106,3 +106,44 @@ body {
 .footer svg {
   color: var(--c1);
 }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 10px var(--c3) solid;
+}
+.paragraph {
+  text-align: start;
+}
+
+.list {
+  list-style-type: none;
+  text-align:start ;
+}
+
+.list >li {
+  margin: 0.3rem;
+}
+
+.cv_preview {
+  background-color: var(--c2);
+  border: black 1px solid;
+  padding: 10px;
+}
+
+.experience {
+display: flex;
+flex-direction: column;
+}
+
+.experience h4 {
+font-size: larger;
+}
+
+.danger {
+  background-color: rgb(227, 90, 90);
+}
+
+.danger:hover {
+  background-color: rgb(185, 21, 21);
+}

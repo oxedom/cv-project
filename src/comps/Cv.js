@@ -3,22 +3,26 @@ import uniqid from "uniqid";
 import Form from "./Form";
 import SchoolForm from './SchoolForm'
 import CompanyForm from "./CompanyForm";
-import Buttons from "./buttons";
+import Cv_Preview from "./Cv_preview";
 
 class Cv extends Component {
     constructor() {
         super()
         this.state = {
             id: uniqid(),
-            name: "Sam",
+            name: "Avi Cohen",
+            title: "Software Enginer",
             email: "bigdog@gmail.com",
             phone: "0542313112",
+            city: "London, UK",
+            bio: "Software Enginer from Scotland, have 5 degrees from MIT and I love solving problems, HATE SQL but am a wizard at it",
             schools: [
                 {
                     id: uniqid(),
                     school: "Croford",
                     school_title: 'Software Engginer',
-                    school_date: "2014-2016",
+                    school_start: "2016",
+                    school_end: "2018"
                 }],
             jobs: [
                 {
@@ -120,7 +124,7 @@ class Cv extends Component {
 
                 </div >
                 <div className="cv_preview">
-
+                    <Cv_Preview data={this.state} />
                 </div>
             </main>
 

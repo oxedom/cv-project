@@ -12,7 +12,7 @@ class SchoolForm extends Component {
     render() {
         const { schoolData, removeEntry, addEntry } = this.props;
 
-        const { school, school_title, school_date, id } = schoolData
+        const { school, school_title, school_start, school_end, id } = schoolData
 
         const buttonData = { id: id, removeEntry, addEntry }
 
@@ -22,7 +22,8 @@ class SchoolForm extends Component {
                 <div className="form-inputs">
                     <input value={school} name="school" />
                     <input value={school_title} name="school_title" />
-                    <input value={school_date} name="school_date" />
+                    <input value={school_start} name="school_start" />
+                    <input value={school_end} name="school_end" />
                 </div>
                 <Buttons data={buttonData}></Buttons>
 

@@ -1,4 +1,4 @@
-import "./App.css";
+
 import Cv from "./comps/Cv";
 
 function App() {

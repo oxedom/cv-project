@@ -20,7 +20,7 @@ class Buttons extends Component {
 
         return (
             <div>
-                <div onClick={this.handleDeleteClick} a-id={id} className="btn">
+                <div onClick={this.handleDeleteClick} a-id={id} className="btn danger" >
                     {" "}
                     Delete{" "}
                 </div>
