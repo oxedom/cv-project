@@ -84,6 +84,29 @@ class Cv extends Component {
         this.setState({ [field]: text })
     }
 
+    handlePrint = (e) => {
+        //Quick easy Vanlia JS solution to handle Printing the CV, a bit expensive querying the DOM but because the app is so small
+        //I will ALOW it. 
+
+        let print = document.getElementsByClassName('printBtn')[0]
+        let creator = document.getElementsByClassName('cv_creator')[0]
+        let preview = document.getElementsByClassName('cv_preview')[0]
+        let footer = document.getElementsByClassName('footer')[0]
+
+        footer.classList.add('hide')
+        creator.classList.add('hide')
+        print.classList.add('hide')
+        preview.parentNode.classList.remove('dvider')
+
+        window.print();
+        setTimeout(() => {
+            footer.classList.remove('hide')
+            creator.classList.remove('hide')
+            print.classList.remove('hide')
+            preview.parentNode.classList.add('dvider')
+        }, 0);
+
+    }
 
 
     render() {
@@ -103,11 +126,14 @@ class Cv extends Component {
                             <div className="btn" onClick={this.handleAddClick} name="jobs" > Add Work Experince  </div>
                         </div>
 
+
                     </form>
 
                 </div >
                 <div className="cv_preview">
+                    <button className="printBtn" onClick={this.handlePrint}> Print </button>
                     <Cv_Preview data={this.state} />
+
                 </div>
             </main>
 

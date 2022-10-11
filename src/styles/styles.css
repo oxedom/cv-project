@@ -60,13 +60,21 @@ body {
   /* border: var(--c4) solid 2px; */
 }
 
+.form-inputs > input:hover {
+  transform: scale(1.005);
+}
+
+.form-inputs > textarea:hover {
+  transform: scale(1.005);
+}
+
 .form-inputs > textarea {
   margin-left: var(--marginlr);
   margin-right: var(--marginlr);
 }
 
 .cv_creator {
-  background-color: var(--c4);
+  background-color: rgb(196, 213, 233);
   border-radius: 10px;
 }
 
@@ -91,10 +99,13 @@ body {
 }
 
 .btn:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   background-color: var(--c2);
 }
 
+.printBtn {
+  margin-top: 10px;
+}
 .dvider {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -141,6 +152,7 @@ h2 {
   border-bottom: 4px black solid;
 }
 .paragraph {
+  margin: 20px;
   text-align: start;
 }
 
@@ -170,6 +182,10 @@ flex-direction: column;
 font-size: larger;
 }
 
+.experience section {
+  margin: 10px;
+}
+
 .danger {
   background-color: rgb(227, 90, 90);
 }
@@ -183,3 +199,5 @@ font-size: larger;
   margin-right: 5px;
 }
 
+
+.hide { display: none;}
