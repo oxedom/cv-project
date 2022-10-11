@@ -22,11 +22,11 @@ class CompanyForm extends Component {
                 <p className="title"> Work Experience </p>
 
                 <div className="form-inputs">
-                    <input placeholder="Job Company" name="job" value={job} />
-                    <input placeholder="Job title" name="job_title" value={job_title} />
+                    <input maxLength="30" placeholder="Job Company" name="job" value={job} />
+                    <input maxLength="30" placeholder="Job title" name="job_title" value={job_title} />
                     <input placeholder="Job start" min="1950" name="job_start" value={job_start} />
                     <input placeholder="Job end" type="number" min="1950" max={today.getFullYear()} name="job_end" value={job_end} />
-                    <textarea name='job_bio' value={job_bio} placeholder={`Tell us about your experince at ${job}`}> </textarea>
+                    <textarea maxLength="200" name='job_bio' value={job_bio} placeholder={`Tell us about your experince at ${job}`}> </textarea>
                 </div>
 
                 <Buttons data={buttonData}></Buttons>

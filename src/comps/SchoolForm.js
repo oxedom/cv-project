@@ -20,8 +20,8 @@ class SchoolForm extends Component {
             <section className="form-box" a-id={id} name='schools'>
                 <p className="title"> Education</p>
                 <div className="form-inputs">
-                    <input placeholder="School Name" value={school} name="school" />
-                    <input placeholder="Subject Title" value={school_title} name="school_title" />
+                    <input maxLength="30" placeholder="School Name" value={school} name="school" />
+                    <input maxLength="30" placeholder="Subject Title" value={school_title} name="school_title" />
                     <input type="number" min="1940" placeholder="Starting Year" value={school_start} name="school_start" />
                     <input placeholder="Ending Year" type="number" min="1940" max={today.getFullYear() + 5} value={school_end} name="school_end" />
                 </div>
