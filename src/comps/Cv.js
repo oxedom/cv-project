@@ -39,33 +39,36 @@ const Cv = () => {
 
 
     //Removes entry by from array by it's ID
-    const removeEntry = (id, arr) => {
-        let filtered = [arr].filter(e => { return e.id !== id })
+    const removeEntry = (id, setter) => {
+        setter((prevState) => {
+
+            let filter = prevState.filter(e => { return e.id !== id })
+
+            return (([...filter]))
+
+        })
 
     }
 
     //Creates an object with an ID for adding a new section either education or work
     //updates the state by using spreadsyntax 
-    const addEntry = (subject) => {
+    const addEntry = (setter) => {
 
         let entry = { id: uniqid() }
 
-        // setState({ [subject]: [...this.state[subject], entry] })
+        setter((prevState) => ([...prevState, entry]))
 
-    }
-    const handleAddClick = (e) => {
-        let subject = e.target.getAttribute('name')
-        addEntry(subject)
-    }
+    };
+
+    // setter([...oldSchools], entry)
+    const handleAddClick = (setter) => { addEntry(setter) }
 
     //Handles State updating for objects in array
     const handleChange = (e) => {
 
         const { value, name } = e.target
 
-
         let arrayID = e.target.parentNode.parentNode.getAttribute('a-id')
-
 
         let arrayName = e.target.parentNode.parentNode.getAttribute('name')
         let targetArray = [arrayName].filter(e => { return e.id === arrayID })
@@ -120,11 +123,11 @@ const Cv = () => {
                     <Form key={personal.id} handler={handlePersonal} personalData={personal} />
 
                     <div onChange={handleChange}>
-                        {schools.map(s => <SchoolForm key={s.id} removeEntry={removeEntry} schoolData={s} > </SchoolForm>)}
+                        {schools.map(s => <SchoolForm key={s.id} removeEntry={(e) => { removeEntry(s.id, setSchools) }} schoolData={s} > </SchoolForm>)}
 
-                        <div className="btn " onClick={handleAddClick} name="schools" > Add Education  </div>
-                        {jobs.map(j => <CompanyForm key={j.id} removeEntry={removeEntry} jobsData={j} > </CompanyForm>)}
-                        <div className="btn" onClick={handleAddClick} name="jobs" > Add Work Experince  </div>
+                        <div className="btn " onClick={(e) => handleAddClick(setSchools)} name="schools" > Add Education  </div>
+                        {jobs.map(j => <CompanyForm key={j.id} removeEntry={(e) => { removeEntry(j.id, setJobs) }} jobsData={j} > </CompanyForm>)}
+                        <div className="btn" onClick={(e) => handleAddClick(setJobs)} name="jobs" > Add Work Experince  </div>
                     </div>
 
 

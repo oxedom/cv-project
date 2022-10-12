@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 
 class Buttons extends Component {
@@ -5,12 +6,7 @@ class Buttons extends Component {
         super()
     }
 
-    handleDeleteClick = (e) => {
-
-        let id = e.target.getAttribute("a-id");
-        let name = e.target.parentNode.parentNode.getAttribute('name')
-        this.props.data.removeEntry(id, `${name}`);
-    };
+    handleDeleteClick = (e) => { this.props.data.removeEntry(); };
 
 
 
