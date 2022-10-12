@@ -1,4 +1,3 @@
-
 import Cv from "./comps/Cv";
 
 function App() {
