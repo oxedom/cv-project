@@ -15,7 +15,7 @@ class Cv extends Component {
             email: "bigdog@gmail.com",
             phone: "0542313112",
             city: "London, UK",
-            bio: "Software Enginer from Scotland, have 5 degrees from MIT and I love solving problems, HATE SQL but am a wizard at it",
+            bio: "Software engineer from Scotland, have 5 degrees from MIT and I love solving problems, HATE SQL but am a wizard at it",
             schools: [
                 {
                     id: uniqid(),
@@ -29,9 +29,9 @@ class Cv extends Component {
                     id: uniqid(),
                     job: "Intel Corporation",
                     job_title: "Software engineer",
-                    job_start: "2012",
-                    job_end: "2019",
-                    job_bio: "I maintained the ICP EU unit and was a a lead Dev ensuring that the team will hit marks by deadlines"
+                    job_start: "2020",
+                    job_end: "2022",
+                    job_bio: "I maintained the ICP EU unit and was a a lead Dev ensuring that the team will hit all marks by deadlines"
                 }
             ],
 
@@ -41,11 +41,15 @@ class Cv extends Component {
 
     // setAll = (obj, val) => Object.keys(obj).forEach(k => obj[k] = val);
 
+
+    //Removes entry by from array by it's ID
     removeEntry = (id, arr) => {
         let filtered = this.state[arr].filter(e => { return e.id !== id })
         this.setState({ [arr]: filtered })
     }
 
+    //Creates an object with an ID for adding a new section either education or work
+    //updates the state by using spreadsyntax 
     addEntry = (subject) => {
 
         let entry = { id: uniqid() }
@@ -60,6 +64,7 @@ class Cv extends Component {
         this.addEntry(subject)
     }
 
+    //Handles State updating for objects in array
     handleChange = (e) => {
 
         let text = e.target.value
@@ -77,7 +82,7 @@ class Cv extends Component {
         this.setState({ [arrayName]: [...OtherArrays, targetArray] })
 
     }
-
+    //Handles State updating for the non array data in the state. 
     handlePersonal = (e) => {
         let text = e.target.value
         let field = e.target.getAttribute('name')
