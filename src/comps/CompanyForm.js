@@ -10,15 +10,13 @@ class CompanyForm extends Component {
     }
 
 
-
-
     render() {
-        const { jobsData, removeEntry, addEntry } = this.props;
+        const { jobsData, removeEntry, addEntry, handleChange } = this.props;
         const { job, job_title, job_start, job_end, id, job_bio } = jobsData;
         const buttonData = { id: id, removeEntry, addEntry }
         let today = new Date()
         return (
-            <section className="form-box" a-id={id} name="jobs">
+            <section className="form-box" a-id={id} name="jobs" onChange={handleChange}>
                 <p className="title"> Work Experience </p>
 
                 <div className="form-inputs">

@@ -64,17 +64,26 @@ const Cv = () => {
     const handleAddClick = (setter) => { addEntry(setter) }
 
     //Handles State updating for objects in array
-    const handleChange = (e) => {
+    const handleChange = (e, setter) => {
 
         const { value, name } = e.target
 
         let arrayID = e.target.parentNode.parentNode.getAttribute('a-id')
 
-        let arrayName = e.target.parentNode.parentNode.getAttribute('name')
-        let targetArray = [arrayName].filter(e => { return e.id === arrayID })
-        let OtherArrays = [arrayName].filter(e => { return e.id !== arrayID })
-        targetArray = targetArray[0]
-        targetArray[name] = value
+        // let arrayName = e.target.parentNode.parentNode.getAttribute('name')
+
+
+
+        setter((prevState) => {
+
+            let targetArray = prevState.filter(e => { return e.id === arrayID })
+            let OtherArrays = prevState.filter(e => { return e.id !== arrayID })
+            targetArray = targetArray[0]
+            targetArray[name] = value
+
+            return (([...OtherArrays, targetArray]))
+
+        })
 
 
         // setState({ [arrayName]: [...OtherArrays, targetArray] })
@@ -122,11 +131,12 @@ const Cv = () => {
 
                     <Form key={personal.id} handler={handlePersonal} personalData={personal} />
 
-                    <div onChange={handleChange}>
-                        {schools.map(s => <SchoolForm key={s.id} removeEntry={(e) => { removeEntry(s.id, setSchools) }} schoolData={s} > </SchoolForm>)}
+                    <div >
 
-                        <div className="btn " onClick={(e) => handleAddClick(setSchools)} name="schools" > Add Education  </div>
-                        {jobs.map(j => <CompanyForm key={j.id} removeEntry={(e) => { removeEntry(j.id, setJobs) }} jobsData={j} > </CompanyForm>)}
+                        {schools.map(s => <SchoolForm handleChange={(e) => handleChange(e, setSchools)} key={s.id} onChange={(e) => handleChange(e, setSchools)} removeEntry={(e) => { removeEntry(s.id, setSchools) }} schoolData={s} > </SchoolForm>)}
+
+                        <div className="btn" onClick={(e) => handleAddClick(setSchools)} name="schools" > Add Education  </div>
+                        {jobs.map(j => <CompanyForm handleChange={(e) => handleChange(e, setJobs)} key={j.id} onChange={(e) => { handleChange(e, setJobs) }} removeEntry={(e) => { removeEntry(j.id, setJobs) }} jobsData={j} > </CompanyForm>)}
                         <div className="btn" onClick={(e) => handleAddClick(setJobs)} name="jobs" > Add Work Experince  </div>
                     </div>
 

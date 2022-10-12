@@ -8,12 +8,12 @@ import Buttons from "./buttons";
 const SchoolForm = (props) => {
 
 
-    const { schoolData, removeEntry, addEntry } = props
+    const { schoolData, removeEntry, addEntry, handleChange } = props
     const { school, school_title, school_start, school_end, id } = schoolData
     let today = new Date()
     const buttonData = { id: id, removeEntry, addEntry }
 
-    return (<section className="form-box" a-id={id} name='schools'>
+    return (<section className="form-box" a-id={id} name='schools' onChange={handleChange}>
         <p className="title"> Education</p>
         <div className="form-inputs">
             <input maxLength="30" placeholder="School Name" value={school} name="school" />
