@@ -74,6 +74,7 @@ body {
 }
 
 .cv_creator {
+
   background-color: rgb(196, 213, 233);
   border-radius: 10px;
 }
@@ -111,9 +112,9 @@ body {
   margin-bottom: 20px;
   margin-left: 100px;
   margin-right: 100px;
+  display: flex;
   display: grid;
-  flex-grow: 1;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
 

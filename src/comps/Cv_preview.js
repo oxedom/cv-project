@@ -45,7 +45,7 @@ class Cv_Preview extends Component {
             <main className="experience">
                 {data.jobs.length > 0 &&
                     <section>
-                        <h2> Work </h2>
+                        <h2> Work Experience </h2>
                         {data.jobs.map(j =>
                             <div className="box">
                                 <h3> {j.job}</h3>
