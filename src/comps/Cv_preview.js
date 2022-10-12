@@ -9,7 +9,6 @@ class Cv_Preview extends Component {
     }
     state = {}
     render() {
-        console.log(this.props);
         const { data } = this.props
 
         return (<div>

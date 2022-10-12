@@ -79,9 +79,10 @@ const Cv = () => {
     }
     //Handles State updating for the non array data in the state. 
     const handlePersonal = (e) => {
+
         let text = e.target.value
-        let field = e.target.getAttribute('name')
-        // setState({ [field]: text })
+        let name = e.target.getAttribute('name')
+        setPersonal((prevState) => ({ ...prevState, [name]: text, }))
     }
 
     const handlePrint = (e) => {
